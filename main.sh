@@ -463,10 +463,10 @@ touch /root/.install.log
 cat >/root/tmp <<-END
 #!/bin/bash
 #vps
-### RizkiHdytstoreVPN $TANGGAL $MYIP
+### JENGKOLONLINEVPN $TANGGAL $MYIP
 END
 ####
-RIZKIHDYTPROJECT() {
+JENGKOLONLINEVPN() {
     data=($(cat /root/tmp | grep -E "^### " | awk '{print $2}'))
     for user in "${data[@]}"; do
         exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
