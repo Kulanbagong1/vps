@@ -23,7 +23,7 @@ IMP="wget -q -O"
 CHATID="1316596937"
 LOCAL_DATE="/usr/bin/"
 MYIP=$(wget -qO- ipinfo.io/ip)
-ISP=$(wget -qO- ipinfo.io/org)
+ISP=$( curl -s ipinfo.io/org )
 CITY=$(curl -s ipinfo.io/city)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
