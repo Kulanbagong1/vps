@@ -51,7 +51,8 @@ setup_dnstt() {
 	mkdir -p /etc/slowdns
 	wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/server.key"
         chmod +x /etc/slowdns/server.key
-	get -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/server.pub"
+	 -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/server.pub"
+	chmod +x /etc/slowdns/server.key
 	wget -O dnstt-server "${REPOS}slowdns/dnstt-server" >/dev/null 2>&1
 	chmod +x dnstt-server >/dev/null 2>&1
 	wget -O dnstt-client "${REPOS}slowdns/dnstt-client" >/dev/null 2>&1
