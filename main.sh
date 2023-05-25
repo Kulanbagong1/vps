@@ -514,36 +514,6 @@ function enable_services(){
     systemctl enable --now  client
     systemctl enable --now  server
     systemctl enable --now  fail2ban
-#start    
-    systemctl start  nginx
-    systemctl start  chronyd
-    systemctl start  xray
-    systemctl start  rc-local
-    systemctl start  dropbear
-    systemctl start  openvpn
-    systemctl start  cron
-    systemctl start  haproxy
-    systemctl start  netfilter-persistent
-    systemctl start  squid
-    systemctl start  ws
-    systemctl start  client
-    systemctl start  server
-    systemctl start  fail2ban
- #restart   
-    systemctl restart  nginx
-    systemctl restart  chronyd
-    systemctl restart  xray
-    systemctl restart  rc-local
-    systemctl restart  dropbear
-    systemctl restart  openvpn
-    systemctl restart  cron
-    systemctl restart  haproxy
-    systemctl restart  netfilter-persistent
-    systemctl restart  squid
-    systemctl restart  ws
-    systemctl restart  client
-    systemctl restart  server
-    systemctl restart  fail2ban
     wget -O /root/.config/rclone/rclone.conf "${REPO}rclone/rclone.conf" >/dev/null 2>&1
     sleep 1
 # banner /etc/issue.net
@@ -585,7 +555,7 @@ function finish(){
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
     cp /etc/openvpn/*.ovpn /var/www/html/
     sed -i "s/xxx/${domain}/g" /var/www/html/index.html
-    sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
+#    sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
     sed -i "s/xxx/${domain}/g" /etc/haproxy/haproxy.cfg
     sed -i "s/xxx/${MYIP}/g" /etc/squid/squid.conf
     chown -R www-data:www-data /etc/msmtprc
