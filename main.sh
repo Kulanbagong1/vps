@@ -144,9 +144,11 @@ function add_domain() {
     ns_domain_cloudflare1() {
 apt install jq curl -y
 echo -e ""
+echo -e "========================================="
 echo -e "jangan karakter singkat seperti: sg, id, hk,"
 echo -e "kalau bisa 1 kata yang unik dengan dikombinasikan dengan angka"
 echo -e "contoh: resa11"
+echo -e "========================================="
 echo -e ""
 echo -e "\e[32msubdomain\e[0m.rizkishope.my.id"
 read -p "Mau subdomain apa?( 1kata ) : " sub
