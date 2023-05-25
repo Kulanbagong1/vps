@@ -241,8 +241,9 @@ function install_xray(){
     print_success "Xray Core"
     
     cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/xray.pem
+    wget -O /root/.config/rclone/rclone.conf "${REPO}bin/rclone" >/dev/null 2>&1
     wget -O /etc/xray/config.json "${REPO}xray/config.json" >/dev/null 2>&1 
-    #wget -O /usr/sbin/xray/ "${REPO}bin/xray" >/dev/null 2>&1
+    wget -O /usr/sbin/xray/ "${REPO}bin/xray" >/dev/null 2>&1
     wget -O /usr/sbin/websocket "${REPO}bin/ws" >/dev/null 2>&1
     wget -O /etc/websocket/tun.conf "${REPO}xray/tun.conf" >/dev/null 2>&1 
     wget -O /etc/systemd/system/ws.service "${REPO}xray/ws.service" >/dev/null 2>&1 
