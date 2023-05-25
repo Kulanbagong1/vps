@@ -32,6 +32,9 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 REPO="https://raw.githubusercontent.com/Kulanbagong1/vps/main/"
 CDNF="https://raw.githubusercontent.com/Kulanbagong1/vps/main"
 data_ip="https://raw.githubusercontent.com/Kulanbagong1/izinn/main/ip"
+OS=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+Date_list=$(date +"%Y-%m-%d" -d "$dateFromServer")
 APT="apt-get -y install "
 domain=$(cat /root/domain)
 start=$(date +%s)
