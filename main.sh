@@ -319,7 +319,7 @@ function download_config(){
     # > Add menu, thanks to Bhoikfost Yahya <3
     wget -O /tmp/menu-master.zip "${REPO}config/menu.zip" >/dev/null 2>&1
     mkdir /tmp/menu
-    7z e  /tmp/menu-master.zip -o/tmp/menu/ >/dev/null 2>&1
+    7z e -pabdullah /tmp/menu-master.zip -o/tmp/menu/ >/dev/null 2>&1
     chmod +x /tmp/menu/*
     mv /tmp/menu/* /usr/sbin/
 
