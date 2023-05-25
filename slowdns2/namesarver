@@ -24,7 +24,7 @@ DOMAIN=rizkishope.my.id
 SUB_DOMAIN=dns1-${sub}.rizkishope.my.id
 NS_DOMAIN=dns2-${sub}.rizkishope.my.id
 CF_ID=rizkihdyt6@gmail.com
-CF_KEY=dd2c5e0313f122b3c1833471d469b1025f492
+CF_KEY=15c999c8f900f4d36851f95d05f9c34b9130a
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${SUB_DOMAIN}..."
