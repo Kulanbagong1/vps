@@ -500,21 +500,50 @@ JENGKOLONLINEVPN() {
 function enable_services(){
     print_install "Restart servis"
     systemctl daemon-reload
-    systemctl start netfilter-persistent
-    systemctl enable --now nginx
-    systemctl enable --now chronyd
-    systemctl enable --now xray
-    systemctl enable --now rc-local
-    systemctl enable --now dropbear
-    systemctl enable --now openvpn
-    systemctl enable --now cron
-    systemctl enable --now haproxy
-    systemctl enable --now netfilter-persistent
-    systemctl enable --now squid
-    systemctl enable --now ws
-    systemctl enable --now client
-    systemctl enable --now server
-    systemctl enable --now fail2ban
+    systemctl enable --now  nginx
+    systemctl enable --now  chronyd
+    systemctl enable --now  xray
+    systemctl enable --now  rc-local
+    systemctl enable --now  dropbear
+    systemctl enable --now  openvpn
+    systemctl enable --now  cron
+    systemctl enable --now  haproxy
+    systemctl enable --now  netfilter-persistent
+    systemctl enable --now  squid
+    systemctl enable --now  ws
+    systemctl enable --now  client
+    systemctl enable --now  server
+    systemctl enable --now  fail2ban
+#start    
+    systemctl start  nginx
+    systemctl start  chronyd
+    systemctl start  xray
+    systemctl start  rc-local
+    systemctl start  dropbear
+    systemctl start  openvpn
+    systemctl start  cron
+    systemctl start  haproxy
+    systemctl start  netfilter-persistent
+    systemctl start  squid
+    systemctl start  ws
+    systemctl start  client
+    systemctl start  server
+    systemctl start  fail2ban
+ #restart   
+    systemctl restart  nginx
+    systemctl restart  chronyd
+    systemctl restart  xray
+    systemctl restart  rc-local
+    systemctl restart  dropbear
+    systemctl restart  openvpn
+    systemctl restart  cron
+    systemctl restart  haproxy
+    systemctl restart  netfilter-persistent
+    systemctl restart  squid
+    systemctl restart  ws
+    systemctl restart  client
+    systemctl restart  server
+    systemctl restart  fail2ban
     wget -O /root/.config/rclone/rclone.conf "${REPO}rclone/rclone.conf" >/dev/null 2>&1
     sleep 1
 # banner /etc/issue.net
