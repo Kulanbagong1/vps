@@ -67,17 +67,7 @@ function print_success() {
         sleep 2
     fi
 }
-judge() {
 
-    if [[ 0 -eq $? ]]; then
-
-        print_ok "$1 Complete... | thx to ${YELLOW}bhoikfostyahya${FONT}"
-
-        sleep 1
-
-    fi
-
-}
 ### Cek root
 function is_root() {
     if [[ 0 == "$UID" ]]; then
@@ -87,7 +77,12 @@ function is_root() {
     fi
 
 }
-
+judge() {
+    if [[ 0 -eq $? ]]; then
+        print_ok "$1 Complete... | thx to ${YELLOW}JengkolOnlineVPN${FONT}"
+        sleep 1
+    fi
+}
 ### Change Environment System
 function first_setup(){
     timedatectl set-timezone Asia/Jakarta
