@@ -31,6 +31,7 @@ KEY="6003347945:AAHv1Ti4HQliYwpYm8sbKrriDkSMqqJLUqE"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 REPO="https://raw.githubusercontent.com/Kulanbagong1/vps/main/"
 CDNF="https://raw.githubusercontent.com/Kulanbagong1/vps/main"
+data_ip="https://raw.githubusercontent.com/Kulanbagong1/izinn/main/ip"
 APT="apt-get -y install "
 domain=$(cat /root/domain)
 start=$(date +%s)
