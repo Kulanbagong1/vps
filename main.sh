@@ -38,6 +38,12 @@ start=$(date +%s)
 secs_to_human() {
     echo "Installation time : $((${1} / 3600)) hours $(((${1} / 60) % 60)) minute's $((${1} % 60)) seconds"
 }
+
+INS="apt-get install -y"
+
+start=$(date +%s)
+
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 ### Status
 function print_ok() {
     echo -e "${OK} ${BLUE} $1 ${FONT}"
@@ -61,7 +67,17 @@ function print_success() {
         sleep 2
     fi
 }
+judge() {
 
+    if [[ 0 -eq $? ]]; then
+
+        print_ok "$1 Complete... | thx to ${YELLOW}bhoikfostyahya${FONT}"
+
+        sleep 1
+
+    fi
+
+}
 ### Cek root
 function is_root() {
     if [[ 0 == "$UID" ]]; then
